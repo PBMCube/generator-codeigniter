@@ -12,7 +12,7 @@ describe('codeigniter generator', function () {
         return done(err);
       }
 
-      this.app = helpers.createGenerator('tobirama:app', [
+      this.app = helpers.createGenerator('codeigniter:app', [
         '../../app'
       ]);
       done();
