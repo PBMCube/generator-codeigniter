@@ -1,0 +1,18 @@
+{
+    "name": "<%= _.slugify(authorName) %>/<%= projectSlug %>",
+    "authors": [
+        {
+            "name": "<%= authorName %>",
+            "email": "<%= authorEmail %>"
+        }
+    ],
+    "require": {
+	    "aws/aws-sdk-php": "*",
+	    "mustache/mustache": "*",
+	    "mobiledetect/mobiledetectlib": "*",
+	    "respect/validation": "*",
+	    "mpdf/mpdf": "*",
+	    "campaignmonitor/createsend-php": "*",
+	    "homerjam/emogrify": "*"
+    }
+}
