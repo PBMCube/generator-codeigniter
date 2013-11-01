@@ -1,7 +1,7 @@
 {
   "name": "generator-codeigniter",
-  "version": "0.1.0",
-  "description": "A generator for Yeoman, this generator create a codeigniter (php framework) structure. Forked from https://github.com/tisvasconcelos/generator-tobirama",
+  "version": "0.0.1",
+  "description": "A generator for Yeoman, this generator create a CodeIgniter structure. Forked from https://github.com/tisvasconcelos/generator-tobirama",
   "keywords": [
     "yeoman-generator codeigniter php"
   ],

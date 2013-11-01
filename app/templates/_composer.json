@@ -9,9 +9,9 @@
     "require": {
 	    "aws/aws-sdk-php": "*",
 	    "mustache/mustache": "*",
+        "leafo/scssphp": "*",
 	    "mobiledetect/mobiledetectlib": "*",
 	    "respect/validation": "*",
-	    "mpdf/mpdf": "*",
 	    "campaignmonitor/createsend-php": "*",
 	    "homerjam/emogrify": "*"
     }

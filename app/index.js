@@ -25,34 +25,18 @@ CodeigniterGenerator.prototype.askFor = function askFor() {
 
     var prompts = [{
         name: 'authorName',
-        message: 'Your name? (author\'s name, default: YES)'
+        message: 'Author\'s name?',
+        default: 'YES'
     }, {
         name: 'authorEmail',
-        message: 'Your email? (author\'s email, default: admin@yesstudio.co.uk)'
+        message: 'Author\'s email?',
+        default: 'admin@yesstudio.co.uk'
     }, {
         name: 'projectSlug',
-        message: 'What do you want to call your project? (lowercase slug)'
-    }, {
-        name: 'projectURL',
-        message: 'Your project URL? (e.g.: leave blank to have CodeIgniter guess this)'
-    }, {
-        name: 'dbHostname',
-        message: 'Your database hostname? (e.g.: 127.0.0.1:3306)'
-    }, {
-        name: 'dbUsername',
-        message: 'Your database username? (e.g.: root)'
-    }, {
-        name: 'dbPassword',
-        message: 'Your database password? (e.g.: root)'
-    }, {
-        name: 'dbDatabase',
-        message: 'Your database name? (e.g.: database_name)'
-    }, {
-        name: 'timeZone',
-        message: 'Your time zone? (e.g.: Europe/London)'
-    }, {
-        name: 'memoryName',
-        message: 'These settings you just entered are cached in memory if you have memcache installed.\nEnter the name/key to save these settings: (e.g: config_project)'
+        message: 'Project slug? (lowercase, no spaces)',
+        validate: function (input) {
+          return input !== '' ? true : 'Must not be blank!';
+        }
     }];
 
     this.prompt(prompts, function (props) {
@@ -60,16 +44,6 @@ CodeigniterGenerator.prototype.askFor = function askFor() {
         this.authorEmail = (props.authorEmail !== '') ? props.authorEmail : 'admin@yesstudio.co.uk';
 
         this.projectSlug = (props.projectSlug !== '') ? props.projectSlug : '_projectslug_';
-        this.projectURL = (props.projectURL !== '') ? props.projectURL : '';
-
-        this.dbHostname = (props.dbHostname !== '') ? props.dbHostname : '127.0.0.1:3306';
-        this.dbUsername = (props.dbUsername !== '') ? props.dbUsername : 'root';
-        this.dbPassword = (props.dbPassword !== '') ? props.dbPassword : 'root';
-        this.dbDatabase = (props.dbDatabase !== '') ? props.dbDatabase : 'database_name';
-
-        this.timeZone = (props.timeZone !== '') ? props.timeZone : 'Europe/London';
-
-        this.memoryName = (props.memoryName !== '') ? props.memoryName : 'config_project';
 
         cb();
     }.bind(this));
@@ -85,14 +59,12 @@ CodeigniterGenerator.prototype.app = function app() {
     this.copy('_composer.json', 'composer.json');
     this.copy('_htaccess', '.htaccess');
     this.copy('_README.md', 'README.md');
+    this.copy('_robots.txt', 'robots.txt');
+    this.copy('_Gruntfile.js', 'Gruntfile.js');
 
     this.template('codeigniter/index.php', 'index.php');
 
     this.copy('codeigniter/license.txt', 'license.txt');
-
-    var configText = '[project]' + '\nslug=' + this.projectSlug + '\nurl=' + this.projectURL + '\ntemplates=templates/' + '\n[database]' + '\nhost=' + this.dbHostname + '\ndb=' + this.dbDatabase + '\nuser=' + this.dbUsername + '\npass=' + this.dbPassword;
-
-    this.write('CONFIG.ini', configText);
 };
 
 /*
