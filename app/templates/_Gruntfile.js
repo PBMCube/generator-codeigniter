@@ -60,16 +60,23 @@ module.exports = function(grunt) {
                     'bower_components/angular-ui-router/release/angular-ui-router.min.js',
                     'bower_components/angular-loading-bar/build/loading-bar.min.js',
 
-                    // 'js/**/*.js',
+                    'js/**/*.js',
 
-                    // 'js/controllers/*.js',
-                    // 'js/services/*.js',
-                    // 'js/filters/*.js',
-                    // 'js/directives/*.js',
+                    'app/scripts/**/*.js',
 
-                    // 'js/webApp.js'
+                    'app/scripts/webApp.js'
                 ],
                 dest: 'dist/<%= pkg.name %>.js'
+            }
+        },
+
+        ngmin: {
+            dist: {
+                files: [{
+                    expand: true,
+                    src: 'dist/<%= pkg.name %>.js',
+                    dest: 'dist/<%= pkg.name %>.js'
+                }]
             }
         },
 
@@ -112,9 +119,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-ngmin');
     grunt.loadNpmTasks('grunt-asciify');
     grunt.loadNpmTasks('grunt-bumpup');
 
-    grunt.registerTask('build', ['jshint', 'concat', 'asciify', 'bumpup', 'uglify']);
+    grunt.registerTask('build', ['jshint', 'concat', 'ngmin', 'asciify', 'bumpup', 'uglify']);
 
 };
