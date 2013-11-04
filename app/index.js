@@ -33,7 +33,7 @@ CodeigniterGenerator.prototype.askFor = function askFor() {
         default: 'admin@yesstudio.co.uk'
     }, {
         name: 'projectSlug',
-        message: 'Project slug? (lowercase, no spaces)',
+        message: 'Project slug?',
         validate: function (input) {
           return input !== '' ? true : 'Must not be blank!';
         }

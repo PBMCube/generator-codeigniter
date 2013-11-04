@@ -41,6 +41,14 @@ module.exports = function(grunt) {
             options: {
                 separator: '\n\n'
             },
+            app: {
+                src: [
+                    'js/**/*.js',
+                    'app/scripts/**/*.js',
+                    'app/scripts/<%= pkg.name %>.js'
+                ],
+                dest: 'dist/<%= pkg.name %>-app.js'
+            },
             dist: {
                 src: [
                     'bower_components/jquery/jquery.min.js',
@@ -60,11 +68,7 @@ module.exports = function(grunt) {
                     'bower_components/angular-ui-router/release/angular-ui-router.min.js',
                     'bower_components/angular-loading-bar/build/loading-bar.min.js',
 
-                    'js/**/*.js',
-
-                    'app/scripts/**/*.js',
-
-                    'app/scripts/webApp.js'
+                    'dist/<%= pkg.name %>-app.js'
                 ],
                 dest: 'dist/<%= pkg.name %>.js'
             }
@@ -74,15 +78,14 @@ module.exports = function(grunt) {
             dist: {
                 files: [{
                     expand: true,
-                    src: 'dist/<%= pkg.name %>.js',
-                    dest: 'dist/<%= pkg.name %>.js'
+                    src: 'dist/<%= pkg.name %>.js'
                 }]
             }
         },
 
         asciify: {
-            yesBanner: {
-                text: 'YES',
+            appBanner: {
+                text: '<%= pkg.author.split(\' <\')[0] %>',
                 options: {
                     font: 'doh', // http://www.figlet.org/examples.html
                     log: false
@@ -96,7 +99,7 @@ module.exports = function(grunt) {
 
         uglify: {
             options: {
-                banner: '/*! \n <%= asciify_yesBanner %> \n <%= pkg.name %> <%= grunt.template.today("isoDateTime") %> \n */ \n',
+                banner: '/*! \n <%= asciify_appBanner %> \n <%= pkg.name %> <%= grunt.template.today("isoDateTime") %> \n Source: /dist/<%= pkg.name %>.js */ \n',
                 preserveComments: 'some',
                 mangle: false
             },
@@ -123,6 +126,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-asciify');
     grunt.loadNpmTasks('grunt-bumpup');
 
-    grunt.registerTask('build', ['jshint', 'concat', 'ngmin', 'asciify', 'bumpup', 'uglify']);
+    grunt.registerTask('build', ['jshint', 'concat:app', 'ngmin', 'concat', 'asciify', 'bumpup', 'uglify']);
 
 };
