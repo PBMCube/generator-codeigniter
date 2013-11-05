@@ -43,13 +43,12 @@ module.exports = function(grunt) {
             },
             app: {
                 src: [
-                    'js/**/*.js',
                     'app/scripts/**/*.js',
-                    'app/scripts/<%= pkg.name %>.js'
+                    'app/scripts/webApp.js'
                 ],
                 dest: 'dist/<%= pkg.name %>-app.js'
             },
-            dist: {
+            deps: {
                 src: [
                     'bower_components/jquery/jquery.min.js',
                     'bower_components/modernizr/modernizr.js',
@@ -68,6 +67,14 @@ module.exports = function(grunt) {
                     'bower_components/angular-ui-router/release/angular-ui-router.min.js',
                     'bower_components/angular-loading-bar/build/loading-bar.min.js',
 
+                    'js/**/*.js',
+                    'js/*.js'
+                ],
+                dest: 'dist/<%= pkg.name %>-deps.js'
+            },
+            dist: {
+                src: [
+                    'dist/<%= pkg.name %>-deps.js',
                     'dist/<%= pkg.name %>-app.js'
                 ],
                 dest: 'dist/<%= pkg.name %>.js'
@@ -126,6 +133,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-asciify');
     grunt.loadNpmTasks('grunt-bumpup');
 
-    grunt.registerTask('build', ['jshint', 'concat:app', 'ngmin', 'concat', 'asciify', 'bumpup', 'uglify']);
+    grunt.registerTask('build', ['jshint', 'concat:deps', 'concat:app', 'ngmin', 'concat', 'asciify', 'bumpup', 'uglify']);
 
 };

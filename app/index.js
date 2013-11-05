@@ -34,8 +34,9 @@ CodeigniterGenerator.prototype.askFor = function askFor() {
     }, {
         name: 'projectSlug',
         message: 'Project slug?',
+        default: 'web',
         validate: function (input) {
-          return input !== '' ? true : 'Must not be blank!';
+            return input !== '' ? true : 'Must not be blank!';
         }
     }];
 
@@ -43,7 +44,7 @@ CodeigniterGenerator.prototype.askFor = function askFor() {
         this.authorName = (props.authorName !== '') ? props.authorName : 'YES';
         this.authorEmail = (props.authorEmail !== '') ? props.authorEmail : 'admin@yesstudio.co.uk';
 
-        this.projectSlug = (props.projectSlug !== '') ? props.projectSlug : '_projectslug_';
+        this.projectSlug = (props.projectSlug !== '') ? props.projectSlug : 'web';
 
         cb();
     }.bind(this));
