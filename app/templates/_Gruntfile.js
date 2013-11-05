@@ -134,6 +134,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-asciify');
     grunt.loadNpmTasks('grunt-bumpup');
 
-    grunt.registerTask('build', ['jshint', 'concat:deps', 'concat:app', 'ngmin', 'concat', 'asciify', 'bumpup', 'uglify']);
+    grunt.registerTask('build', ['jshint', 'concat:deps', 'concat:app', 'ngmin', 'concat:dist', 'asciify', 'bumpup', 'uglify']);
 
 };
