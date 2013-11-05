@@ -53,18 +53,22 @@ CodeigniterGenerator.prototype.askFor = function askFor() {
 CodeigniterGenerator.prototype.app = function app() {
     this.directory('codeigniter/application', 'application');
     this.directory('codeigniter/system', 'system');
-    this.directory('codeigniter/templates', 'templates');
+
+    this.directory('app', 'app');
+    this.directory('requirejs', 'requirejs');
+    this.directory('ngviews', 'ngviews');
+    this.directory('styles', 'styles');
 
     this.copy('_package.json', 'package.json');
     this.copy('_bower.json', 'bower.json');
     this.copy('_composer.json', 'composer.json');
     this.copy('_htaccess', '.htaccess');
+    this.copy('_bowerrc', '.bowerrc');
     this.copy('_README.md', 'README.md');
     this.copy('_robots.txt', 'robots.txt');
     this.copy('_Gruntfile.js', 'Gruntfile.js');
 
     this.template('codeigniter/index.php', 'index.php');
-
     this.copy('codeigniter/license.txt', 'license.txt');
 };
 

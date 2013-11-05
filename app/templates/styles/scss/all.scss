@@ -1,0 +1,13 @@
+$vendors: webkit moz ms o;
+@mixin prefix($property, $value, $prefixes: $vendors) {
+    @each $prefix in $prefixes {
+        -#{$prefix}-#{$property}: #{$value};
+    }
+    #{$property}: #{$value};
+}
+
+$color: red;
+
+h1 {
+	color: $color;
+}

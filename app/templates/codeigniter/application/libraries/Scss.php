@@ -7,7 +7,7 @@ class Scss extends scss_server {
 
     protected $ci;
     private $scssc;
-    private $source = "css/scss";
+    private $source = "styles/scss";
     private $formatter = "scss_formatter"; // scss_formatter/scss_formatter_nested/scss_formatter_compressed
 
     function __construct() {

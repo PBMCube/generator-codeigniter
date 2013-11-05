@@ -1,8 +1,13 @@
 <?php
 
+date_default_timezone_set('Europe/London');
+
 require 'vendor/autoload.php';
 
-define('APP_VERSION', json_decode(file_get_contents('composer.json'))->version);
+$info = json_decode(file_get_contents('composer.json'));
+
+define('APP_NAME', explode('/', $info->name)[1]);
+define('APP_VERSION', $info->version);
 
 if (getenv('BUILDPACK_URL')) { define('ENVIRONMENT', 'production'); }
 

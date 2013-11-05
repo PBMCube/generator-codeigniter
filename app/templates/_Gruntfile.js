@@ -30,10 +30,10 @@ module.exports = function(grunt) {
                 require: true
             },
             all: [
-                'js/*.js',
-                'js/**/*.js',
-                '!js/**/*.min.js',
-                '!js/libs/*.js'
+                'app/scripts/*.js',
+                'app/scripts/**/*.js',
+                '!app/scripts/*.min.js',
+                '!app/scripts/**/*.min.js',
             ]
         },
 
@@ -43,6 +43,7 @@ module.exports = function(grunt) {
             },
             app: {
                 src: [
+                    'app/scripts/production.js',
                     'app/scripts/**/*.js',
                     'app/scripts/webApp.js'
                 ],

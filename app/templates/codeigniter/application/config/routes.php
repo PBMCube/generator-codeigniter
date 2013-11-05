@@ -42,5 +42,18 @@ $route['default_controller'] = "welcome";
 $route['404_override'] = '';
 
 
+$all = "(.*)";
+$any = "([a-zA-Z0-9_-]+)";
+
+
+$route["errorlog"] = "errorlog/index";
+
+$route["clearcache"] = "cache/clear";
+
+$route["scss/$all"] = "sass/serve/$1";
+
+// $route["requirejs/main.js"] = "requirejs/main";
+
+
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
