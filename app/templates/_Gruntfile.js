@@ -86,7 +86,7 @@ module.exports = function(grunt) {
             dist: {
                 files: [{
                     expand: true,
-                    src: 'dist/<%= pkg.name %>.js'
+                    src: 'dist/<%= pkg.name %>-app.js'
                 }]
             }
         },
