@@ -1,37 +1,37 @@
 {
-  "name": "web",
-  "version": "0.0.0",
-  "authors": [
-    "<%= authorName %> <<%= authorEmail %>>"
-  ],
-  "license": "EULA",
-  "private": true,
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "devDependencies": {
-    "requirejs": "~2.1.9",
-    "jquery": "~1.10.2",
-    "modernizr": "*",
-    "underscore": "*",
-    "respond": "*",
-    "mustache": "*",
-    "cookie": "gh-pages",
-    "momentjs": "*",
-    "angular": "~1.2.0",
-    "angular-route": "~1.2.0",
-    "angular-sanitize": "~1.2.0",
-    "angular-touch": "~1.2.0",
-    "angular-mocks": "~1.2.0",
-    "angular-scenario": "~1.2.0",    
-    "angular-ui": "~0.4.0",
-    "angular-ui-router": "~0.2.0",
-    "angular-loading-bar": "*",
-    "raf.js": "*",
-    "tweenjs": "*"
-  }
+    "name": "web",
+    "version": "0.0.0",
+    "authors": [
+        "<%= authorName %> <<%= authorEmail %>>"
+    ],
+    "license": "EULA",
+    "private": true,
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "devDependencies": {
+        "requirejs": "~2.1.9",
+        "jquery": "~1.10.2",
+        "modernizr": "*",
+        "underscore": "*",
+        "respond": "*",
+        "mustache": "*",
+        "cookie": "gh-pages",
+        "momentjs": "*",
+        "angular": "~1.2.0",
+        "angular-route": "~1.2.0",
+        "angular-sanitize": "~1.2.0",
+        "angular-touch": "~1.2.0",
+        "angular-mocks": "~1.2.0",
+        "angular-scenario": "~1.2.0",
+        "angular-ui": "~0.4.0",
+        "angular-ui-router": "~0.2.0",
+        "angular-loading-bar": "*",
+        "raf.js": "*",
+        "tweenjs": "*"
+    }
 }
