@@ -1,3 +1,5 @@
+console.log('DEFAULT main.js');
+
 angular.module('webApp.controllers', []);
 angular.module('webApp.services', []);
 angular.module('webApp.filters', []);

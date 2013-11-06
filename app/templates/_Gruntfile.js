@@ -62,6 +62,7 @@ module.exports = function(grunt) {
                     'bower_components/tweenjs/build/tween.min.js',
 
                     'bower_components/angular/angular.min.js',
+                    'bower_components/angular-animate/angular-animate.min.js',
                     'bower_components/angular-sanitize/angular-sanitize.min.js',
                     'bower_components/angular-touch/angular-touch.min.js',
                     'bower_components/angular-ui/build/angular-ui.min.js',
