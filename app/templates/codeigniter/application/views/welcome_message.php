@@ -40,6 +40,8 @@
 
 </div>
 
+<script src="http://localhost:35729/livereload.js"></script>
+
 <script src="//maps.googleapis.com/maps/api/js?v=3&sensor=false"></script>
 
 <? if (ENVIRONMENT == 'production') { ?>

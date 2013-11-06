@@ -118,9 +118,17 @@ module.exports = function(grunt) {
         },
 
         watch: {
-            js: {
-                files: ['js/*.js', 'js/**/*.js'],
-                tasks: ['build']
+            app: {
+                files: [
+                    'app/scripts/*.js',
+                    'app/scripts/**/*.js',
+                    'ngviews/*.html',
+                    'application/views/*.php'
+                ],
+                tasks: [],
+                options: {
+                    livereload: 35729
+                }
             }
         },
 
