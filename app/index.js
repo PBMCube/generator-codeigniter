@@ -67,6 +67,7 @@ CodeigniterGenerator.prototype.app = function app() {
     this.copy('_README.md', 'README.md');
     this.copy('_robots.txt', 'robots.txt');
     this.copy('_Gruntfile.js', 'Gruntfile.js');
+    this.copy('_config.rb', 'config.rb');
 
     this.template('codeigniter/index.php', 'index.php');
     this.copy('codeigniter/license.txt', 'license.txt');
@@ -74,7 +75,7 @@ CodeigniterGenerator.prototype.app = function app() {
 
 /*
 CodeigniterGenerator.prototype.projectfiles = function projectfiles() {
-  this.copy('editorconfig', '.editorconfig');
-  this.copy('jshintrc', '.jshintrc');
+    this.copy('editorconfig', '.editorconfig');
+    this.copy('jshintrc', '.jshintrc');
 };
 */
