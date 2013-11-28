@@ -9,4 +9,6 @@
 
     npm install
     bower install
-    composer install
+    composer update
+
+    gem install compass
