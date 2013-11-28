@@ -6,6 +6,7 @@ if ( !defined( 'BASEPATH' ) )
 class Api extends CI_Controller {
 
 	function get( $model, $function ) {
+		$this->load->library( 'cms' );
 
 		$this->load->driver( 'cache', array( 'adapter' => 'apc', 'backup' => 'file' ) );
 
