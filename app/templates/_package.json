@@ -18,6 +18,7 @@
         "grunt-contrib-concat": "*",
         "grunt-contrib-uglify": "*",
         "grunt-contrib-watch": "*",
+        "grunt-contrib-compass": "*",
         "grunt-ngmin": "*",
         "grunt-asciify": "*",
         "grunt-bumpup": "*"

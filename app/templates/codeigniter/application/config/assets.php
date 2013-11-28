@@ -31,4 +31,6 @@ $config["assets_large_thumbs"] = array(
     "h" => 500
 );
 
+$config["assets"] = $config;
+
 ?>

@@ -6,22 +6,22 @@ class Quality extends CI_Model {
         parent::__construct();
         
         $this->load->config("quality");
-        $this->load->library("user_agent");
+        $this->load->library("ua");
         
-        $ua = $this->agent->agent_string();
+        if ($this->input->get_post("asset_quality")) {
+            $this->config->set_item("asset_quality", $this->input->get_post("asset_quality"));
 
-        $ipad = (bool) stripos($ua, "ipad");
-        $iphone = (bool) stripos($ua, "iphone");
-        
-        if ($ipad) {
-            $this->config->set_item("asset_quality", $this->config->item("ipad", "quality"));
-            
-        } else if ($this->agent->is_mobile()) {
-            $this->config->set_item("asset_quality", $this->config->item("mobile", "quality"));
-            
         } else {
-            $this->config->set_item("asset_quality", $this->config->item("default", "quality"));
-        }        
+            if ($this->ua->isTablet()) {
+                $this->config->set_item("asset_quality", $this->config->item("tablet", "quality"));
+                
+            } else if ($this->ua->isMobile()) {
+                $this->config->set_item("asset_quality", $this->config->item("mobile", "quality"));
+                
+            } else {
+                $this->config->set_item("asset_quality", $this->config->item("default", "quality"));
+            }
+        }
     }
     
 }

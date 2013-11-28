@@ -1,5 +1,6 @@
 {
     "name": "<%= _.slugify(authorName) %>/<%= projectSlug %>",
+    "version": "0.0.0",
     "authors": [
         {
             "name": "<%= authorName %>",
@@ -8,7 +9,6 @@
     ],
     "require": {
 	    "aws/aws-sdk-php": "*",
-	    "mustache/mustache": "*",
         "leafo/scssphp": "*",
 	    "mobiledetect/mobiledetectlib": "*",
 	    "respect/validation": "*",

@@ -33,6 +33,7 @@
         "angular-ui-router": "~0.2.0",
         "angular-loading-bar": "*",
         "raf.js": "*",
-        "tweenjs": "*"
+        "tweenjs": "*",
+        "imagesloaded-packaged": "*"
     }
 }

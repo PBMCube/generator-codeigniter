@@ -60,6 +60,7 @@ module.exports = function(grunt) {
                     'bower_components/momentjs/min/moment.min.js',
                     'bower_components/raf.js/raf.min.js',
                     'bower_components/tweenjs/build/tween.min.js',
+                    'bower_components/imagesloaded-packaged/imagesloaded.pkgd.min.js',
 
                     'bower_components/angular/angular.min.js',
                     'bower_components/angular-animate/angular-animate.min.js',
@@ -118,18 +119,31 @@ module.exports = function(grunt) {
             }
         },
 
+        compass: {
+            dist: {
+                options: {
+                    config: 'config.rb'
+                }
+            }
+        },
+
         watch: {
             app: {
                 files: [
                     'app/scripts/*.js',
                     'app/scripts/**/*.js',
-                    'ngviews/*.html',
-                    'application/views/*.php'
+                    'ngviews/*.html'
                 ],
                 tasks: [],
                 options: {
                     livereload: 35729
                 }
+            },
+            compass: {
+                files: [
+                    'styles/scss/*.scss'
+                ],
+                tasks: ['compass']
             }
         },
 
@@ -139,10 +153,11 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-ngmin');
     grunt.loadNpmTasks('grunt-asciify');
     grunt.loadNpmTasks('grunt-bumpup');
 
-    grunt.registerTask('build', ['jshint', 'concat:deps', 'concat:app', 'ngmin', 'concat:dist', 'asciify', 'bumpup', 'uglify']);
+    grunt.registerTask('build', ['jshint', 'concat:deps', 'concat:app', 'ngmin', 'concat:dist', 'asciify', 'bumpup', 'uglify', 'compass']);
 
 };

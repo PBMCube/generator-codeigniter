@@ -6,7 +6,9 @@ require 'vendor/autoload.php';
 
 $info = json_decode(file_get_contents('composer.json'));
 
-define('APP_NAME', explode('/', $info->name)[1]);
+$name = explode('/', $info->name);
+
+define('APP_NAME', $name[1]);
 define('APP_VERSION', $info->version);
 
 if (getenv('BUILDPACK_URL')) { define('ENVIRONMENT', 'production'); }
