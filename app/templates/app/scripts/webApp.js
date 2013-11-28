@@ -5,17 +5,27 @@
     var webApp = angular.module('webApp', [
         'ui.router',
         'ngSanitize',
+        'ngAnimate',
         'webApp.controllers',
         'webApp.services',
         'webApp.filters'
     ]);
 
     webApp.config(
-        ['$stateProvider', '$locationProvider', '$urlRouterProvider', '$httpProvider', '$provide',
-            function ($stateProvider, $locationProvider, $urlRouterProvider, $httpProvider, $provide) {
+        ['$stateProvider', '$locationProvider', '$urlRouterProvider', '$httpProvider', '$provide', '$sceDelegateProvider', '$sceProvider',
+            function ($stateProvider, $locationProvider, $urlRouterProvider, $httpProvider, $provide, $sceDelegateProvider, $sceProvider) {
 
                 $locationProvider.html5Mode(true);
 
+                // Disable security to allow untrusted urls...
+                // $sceProvider.enabled(false);
+
+                // ... or whitelist them
+                $sceDelegateProvider.resourceUrlWhitelist([
+                    'self',
+                    'http://*.vimeo.com/**'
+                ]);
+                
                 // Overrides
 
                 // Kill default ng-src
