@@ -32,8 +32,9 @@
         "angular-ui": "~0.4.0",
         "angular-ui-router": "~0.2.0",
         "angular-loading-bar": "*",
+        "angular-carousel2": "*",
+        "AngularGM": "*",
         "raf.js": "*",
-        "tweenjs": "*",
         "imagesloaded-packaged": "*"
     }
 }

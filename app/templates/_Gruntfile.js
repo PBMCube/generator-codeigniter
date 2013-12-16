@@ -59,7 +59,6 @@ module.exports = function(grunt) {
                     'bower_components/cookie/cookie.min.js',
                     'bower_components/momentjs/min/moment.min.js',
                     'bower_components/raf.js/raf.min.js',
-                    'bower_components/tweenjs/build/tween.min.js',
                     'bower_components/imagesloaded-packaged/imagesloaded.pkgd.min.js',
 
                     'bower_components/angular/angular.min.js',

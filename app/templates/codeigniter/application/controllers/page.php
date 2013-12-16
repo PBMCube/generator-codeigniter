@@ -7,6 +7,7 @@ class Page extends CI_Controller {
 
     public function index() {
         $this->load->library( 'ua' );
+        $this->load->helper( 'url' );
 
         $data = array();
 

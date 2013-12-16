@@ -68,6 +68,8 @@
 
 <body class="<?=$device?>" ng-controller="AppCtrl">
 
+    <div id="content" ui-view="content"></div>
+
 <? if (ENVIRONMENT == 'production') { ?>
     <script src="/build/<?=APP_NAME?>.min.js?v=<?=APP_VERSION?>"></script>
 
