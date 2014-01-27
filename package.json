@@ -1,6 +1,6 @@
 {
   "name": "generator-codeigniter",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "A generator for Yeoman, this generator creates a CodeIgniter backend and Angular Frontend.",
   "keywords": [
     "yeoman-generator codeigniter php"
