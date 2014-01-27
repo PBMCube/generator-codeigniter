@@ -8,7 +8,6 @@
         }
     ],
     "require": {
-	    "aws/aws-sdk-php": "*",
         "leafo/scssphp": "*",
 	    "mobiledetect/mobiledetectlib": "*",
 	    "respect/validation": "*",

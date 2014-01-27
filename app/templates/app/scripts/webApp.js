@@ -9,6 +9,8 @@
         'webApp.controllers',
         'webApp.services',
         'webApp.filters'
+
+        // Add directives here
     ]);
 
     webApp.config(

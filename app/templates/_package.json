@@ -12,7 +12,6 @@
     "devDependencies": {
         "grunt": "*",
         "grunt-cli": "*",
-        "bower": "*",
         "grunt-contrib-clean": "*",
         "grunt-contrib-jshint": "*",
         "grunt-contrib-concat": "*",

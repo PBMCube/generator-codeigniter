@@ -6,7 +6,7 @@ if (!defined('BASEPATH'))
 class Cms {
 
     protected $ci;
-    public $logged_in = true;
+    public $logged_in = false;
 
     public $user = null;
 

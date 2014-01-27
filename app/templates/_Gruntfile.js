@@ -51,14 +51,9 @@ module.exports = function(grunt) {
             },
             deps: {
                 src: [
+                    // 'bower_components/modernizr/modernizr.js',
                     'bower_components/jquery/jquery.min.js',
-                    'bower_components/modernizr/modernizr.js',
-                    'bower_components/underscore/underscore-min.js',
                     'bower_components/respond/respond.min.js',
-                    'bower_components/mustache/mustache.js',
-                    'bower_components/cookie/cookie.min.js',
-                    'bower_components/momentjs/min/moment.min.js',
-                    'bower_components/raf.js/raf.min.js',
                     'bower_components/imagesloaded-packaged/imagesloaded.pkgd.min.js',
 
                     'bower_components/angular/angular.min.js',
@@ -68,9 +63,6 @@ module.exports = function(grunt) {
                     'bower_components/angular-ui/build/angular-ui.min.js',
                     'bower_components/angular-ui-router/release/angular-ui-router.min.js',
                     'bower_components/angular-loading-bar/build/loading-bar.min.js',
-
-                    'js/**/*.js',
-                    'js/*.js'
                 ],
                 dest: 'dist/<%= pkg.name %>-deps.js'
             },
@@ -142,7 +134,10 @@ module.exports = function(grunt) {
                 files: [
                     'styles/scss/*.scss'
                 ],
-                tasks: ['compass']
+                tasks: ['compass'],
+                options: {
+                    livereload: 35729
+                }
             }
         },
 
