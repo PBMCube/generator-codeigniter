@@ -34,7 +34,7 @@
         "angular-loading-bar": "*",
         "angular-carousel2": "*",
         "angular-gridify": "*",
-        "angular-colummnify": "*",
+        "angular-columnify": "*",
         "AngularGM": "*",
         "raf.js": "*",
         "imagesloaded-packaged": "*"
