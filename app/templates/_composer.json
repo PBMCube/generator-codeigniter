@@ -8,9 +8,7 @@
         }
     ],
     "require": {
-        "leafo/scssphp": "*",
 	    "mobiledetect/mobiledetectlib": "*",
-	    "respect/validation": "*",
 	    "campaignmonitor/createsend-php": "*",
 	    "homerjam/emogrify": "*"
     }

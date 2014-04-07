@@ -44,12 +44,6 @@ $route['404_override'] = '';
 
 $route["errorlog"] = "errorlog/index";
 
-$route["scss/(:any)"] = "sass/serve/$1";
-
-$route["feed/(:any)"] = "feed/$1";
-
-$route["requirejs/main.js"] = "requirejs/main";
-
 $route["api/(:any)/(:any)/(:any)"] = "api/$1/$2/$3";
 
 $route["(.*)"] = "page/index";

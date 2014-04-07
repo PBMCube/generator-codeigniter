@@ -16,6 +16,8 @@ class Cms {
         $this->ci->load->library('session');
         $this->ci->load->library('encrypt');
 
+        $this->ci->load->config('cms3', true);
+
         $this->logged_in = $this->is_logged_in();
     }
 

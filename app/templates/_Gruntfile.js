@@ -43,7 +43,8 @@ module.exports = function(grunt) {
             },
             app: {
                 src: [
-                    'app/scripts/production.js',
+                    'app/scripts/header.js',
+                    'app/scripts/templates.js',
                     'app/scripts/**/*.js',
                     'app/scripts/webApp.js'
                 ],
@@ -51,18 +52,24 @@ module.exports = function(grunt) {
             },
             deps: {
                 src: [
-                    // 'bower_components/modernizr/modernizr.js',
-                    'bower_components/jquery/jquery.min.js',
-                    'bower_components/respond/respond.min.js',
-                    'bower_components/imagesloaded-packaged/imagesloaded.pkgd.min.js',
+                    'bower_components/modernizr/modernizr.js',
+                    'bower_components/jquery/jquery.js',
+                    'bower_components/respond/respond.js',
+                    'bower_components/imagesloaded-packaged/imagesloaded.pkgd.js',
+                    'bower_components/greensock/src/minified/TweenMax.js',
+                    'bower_components/greensock/src/minified/plugins/ScrollToPlugin.js',
 
-                    'bower_components/angular/angular.min.js',
-                    'bower_components/angular-animate/angular-animate.min.js',
-                    'bower_components/angular-sanitize/angular-sanitize.min.js',
-                    'bower_components/angular-touch/angular-touch.min.js',
-                    'bower_components/angular-ui/build/angular-ui.min.js',
-                    'bower_components/angular-ui-router/release/angular-ui-router.min.js',
-                    'bower_components/angular-loading-bar/build/loading-bar.min.js',
+                    'bower_components/angular/angular.js',
+                    'bower_components/angular-animate/angular-animate.js',
+                    'bower_components/angular-sanitize/angular-sanitize.js',
+                    'bower_components/angular-touch/angular-touch.js',
+                    'bower_components/angular-ui/build/angular-ui.js',
+                    'bower_components/angular-ui-utils/ui-utils.js',
+                    'bower_components/angular-ui-router/release/angular-ui-router.js',
+                    'bower_components/angular-loading-bar/build/loading-bar.js',
+                    'bower_components/angular-carousel2/angular-carousel2.js',
+                    'bower_components/angular-gridify/angular-gridify.js',
+                    'bower_components/angular-ui-router-anim-in-out/anim-in-out.js'
                 ],
                 dest: 'dist/<%= pkg.name %>-deps.js'
             },
@@ -110,36 +117,68 @@ module.exports = function(grunt) {
             }
         },
 
-        compass: {
-            dist: {
-                options: {
-                    config: 'config.rb'
-                }
-            }
-        },
-
         watch: {
-            app: {
+            css: {
                 files: [
-                    'app/scripts/*.js',
-                    'app/scripts/**/*.js',
-                    'ngviews/*.html'
+                    'styles/css/*.css'
                 ],
-                tasks: [],
                 options: {
-                    livereload: 35729
+                    livereload: true
                 }
             },
-            compass: {
+            js: {
+                files: [
+                    'app/scripts/*.js',
+                    'app/scripts/**/*.js'
+                ],
+                options: {
+                    livereload: true
+                }
+            },
+            html: {
+                files: [
+                    'templates/*.html'
+                ],
+                options: {
+                    livereload: true
+                }
+            },
+            scss: {
                 files: [
                     'styles/scss/*.scss'
                 ],
-                tasks: ['compass'],
-                options: {
-                    livereload: 35729
-                }
+                tasks: ['sass']
             }
         },
+
+        sass: {
+            dist: {
+                options: {
+                    sourceComments: 'map',
+                    outputStyle: 'compressed'
+                },
+                files: [{
+                    expand: true,
+                    cwd: 'styles/scss',
+                    src: ['*.scss'],
+                    dest: 'styles/css',
+                    ext: '.css'
+                }]
+            }
+        },
+
+        ngtemplates: {
+            'webApp.templates': {
+                src: 'templates/**.html',
+                dest: 'app/scripts/templates.js',
+                options: {
+                    standalone: true,
+                    htmlmin: {
+                        collapseWhitespace: true
+                    }
+                }
+            }
+        }
 
     });
 
@@ -147,11 +186,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-compass');
+    grunt.loadNpmTasks('grunt-angular-templates');
     grunt.loadNpmTasks('grunt-ngmin');
+    grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-asciify');
     grunt.loadNpmTasks('grunt-bumpup');
 
-    grunt.registerTask('build', ['jshint', 'concat:deps', 'concat:app', 'ngmin', 'concat:dist', 'asciify', 'bumpup', 'uglify', 'compass']);
+    grunt.registerTask('build', ['ngtemplates', 'jshint', 'concat:deps', 'concat:app', 'ngmin', 'concat:dist', 'asciify', 'bumpup', 'uglify', 'sass']);
 
 };

@@ -1,30 +1,32 @@
-(function () {
+(function() {
     'use strict';
 
     angular.module('webApp.controllers')
 
     .controller('AppCtrl', ['$scope', '$stateParams', '$state', '$rootScope', '$location', '$window', '$timeout',
-        function ($scope, $stateParams, $state, $rootScope, $location, $window, $timeout) {
+        function($scope, $stateParams, $state, $rootScope, $location, $window, $timeout) {
 
-            console.log('AppCtrl', $scope, $stateParams, $state);
+            angular.extend($rootScope, $window.app);
 
-            $rootScope.$on('$stateChangeSuccess', function (e, toState, toParams, fromState, fromParams) {
-                $('html').attr('data-state', toState.name);
-            });
+            $scope.$on('$stateChangeSuccess', function(e, toState, toParams, fromState, fromParams) {
+                $state.previous = fromState;
 
-            if (!$.support.transition) {
-                $.fn.transition = $.fn.animate;
-            }
+                $rootScope.currentURL = $location.absUrl();
 
-            $rootScope.emScale = parseInt($('body').css('font-size'), 10);
+                $rootScope.urlSegments = $location.path().slice(1, -1).split('/');
 
-            $(window).on('resize', function (e) {
-                $rootScope.emScale = parseInt($('body').css('font-size'), 10);
-            });
+                $rootScope.stateName = toState.name;
 
-            $rootScope.$on('$viewContentLoaded', function () {
                 // ga('send', 'pageview', {'page': $location.path()});
             });
+
+            $scope.resize = function() {
+                $rootScope.emScale = Number(parseFloat(angular.element('body').css('font-size')).toString());
+            };
+
+            $scope.resize();
+
+            angular.element($window).on('resize', $scope.resize);
 
         }
     ]);

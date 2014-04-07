@@ -17,8 +17,9 @@
         "grunt-contrib-concat": "*",
         "grunt-contrib-uglify": "*",
         "grunt-contrib-watch": "*",
-        "grunt-contrib-compass": "*",
+        "grunt-angular-templates": "*",
         "grunt-ngmin": "*",
+        "grunt-sass": "*",
         "grunt-asciify": "*",
         "grunt-bumpup": "*"
     }

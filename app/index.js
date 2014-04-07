@@ -1,4 +1,5 @@
 'use strict';
+
 var util = require('util');
 var path = require('path');
 var yeoman = require('yeoman-generator');
@@ -6,7 +7,7 @@ var yeoman = require('yeoman-generator');
 var CodeigniterGenerator = module.exports = function CodeigniterGenerator(args, options, config) {
     yeoman.generators.Base.apply(this, arguments);
 
-    this.on('end', function () {
+    this.on('end', function() {
         this.installDependencies({
             skipInstall: true
         });
@@ -20,29 +21,28 @@ util.inherits(CodeigniterGenerator, yeoman.generators.Base);
 CodeigniterGenerator.prototype.askFor = function askFor() {
     var cb = this.async();
 
-    // have Yeoman greet the user.
     console.log(this.yeoman);
 
     var prompts = [{
         name: 'authorName',
         message: 'Author\'s name?',
-        default: 'YES'
+        default: 'Author\'s Name'
     }, {
         name: 'authorEmail',
         message: 'Author\'s email?',
-        default: 'admin@yesstudio.co.uk'
+        default: 'user@domain.com'
     }, {
         name: 'projectSlug',
         message: 'Project slug?',
         default: 'web',
-        validate: function (input) {
+        validate: function(input) {
             return input !== '' ? true : 'Must not be blank!';
         }
     }];
 
-    this.prompt(prompts, function (props) {
-        this.authorName = (props.authorName !== '') ? props.authorName : 'YES';
-        this.authorEmail = (props.authorEmail !== '') ? props.authorEmail : 'admin@yesstudio.co.uk';
+    this.prompt(prompts, function(props) {
+        this.authorName = (props.authorName !== '') ? props.authorName : 'Author\'s Name';
+        this.authorEmail = (props.authorEmail !== '') ? props.authorEmail : 'user@domain.com';
 
         this.projectSlug = (props.projectSlug !== '') ? props.projectSlug : 'web';
 
@@ -55,8 +55,8 @@ CodeigniterGenerator.prototype.app = function app() {
     this.directory('codeigniter/system', 'system');
 
     this.directory('app', 'app');
-    this.directory('requirejs', 'requirejs');
-    this.directory('ngviews', 'ngviews');
+    this.directory('bourbon', 'bourbon');
+    this.directory('templates', 'templates');
     this.directory('styles', 'styles');
 
     this.copy('_package.json', 'package.json');
@@ -64,10 +64,10 @@ CodeigniterGenerator.prototype.app = function app() {
     this.copy('_composer.json', 'composer.json');
     this.copy('_htaccess', '.htaccess');
     this.copy('_bowerrc', '.bowerrc');
+    this.copy('_gitignore', '.gitignore');
     this.copy('_README.md', 'README.md');
     this.copy('_robots.txt', 'robots.txt');
     this.copy('_Gruntfile.js', 'Gruntfile.js');
-    this.copy('_config.rb', 'config.rb');
 
     this.template('codeigniter/index.php', 'index.php');
     this.copy('codeigniter/license.txt', 'license.txt');

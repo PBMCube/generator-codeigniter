@@ -1,12 +1,18 @@
-(function () {
-	'use strict';
+(function() {
+    'use strict';
 
-	angular.module('webApp.controllers')
+    angular.module('webApp.controllers')
 
-	.controller('HomeCtrl', ['$scope', function ($scope) {
+    .controller('HomeCtrl', ['$rootScope', '$scope',
+        function($rootScope, $scope) {
 
-		$scope.welcomeMessage = 'Hello Angular!';
+            $rootScope.pageTitle = 'Home';
+            $rootScope.metaDescription = 'This site will change your life, probably.';
+            $rootScope.metaKeywords = 'Rarely, used, but, whatever';
 
-	}]);
+            $scope.welcomeMessage = 'Hello Angular!';
+
+        }
+    ]);
 
 })();

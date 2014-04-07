@@ -1,21 +1,20 @@
-(function () {
+(function() {
     'use strict';
 
     angular.module('webApp.services')
 
-        .factory('exampleService', ['$http',
-            function exampleService($http) {
+    .factory('exampleService', ['$http',
+        function exampleService($http) {
 
-                var privateVar = 'Hello World';
+            var privateVar = 'Hello World';
 
-                var service = {};
+            var service = {};
 
-                service.get = function () {
-                    return privateVar;
-                };
+            service.get = function() {
+                return privateVar;
+            };
 
-                return service;
-            }
-        ]);
-
+            return service;
+        }
+    ]);
 })();

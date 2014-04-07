@@ -48,9 +48,17 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'username';
-$db['default']['password'] = 'password';
+if (ENVIRONMENT == 'development') {
+	$db['default']['hostname'] = 'localhost';
+	$db['default']['username'] = 'username';
+	$db['default']['password'] = 'password';
+
+} else if (ENVIRONMENT == 'production') {
+	$db['default']['hostname'] = 'localhost';
+	$db['default']['username'] = 'username';
+	$db['default']['password'] = 'password';
+}
+
 $db['default']['database'] = 'database';
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = '';

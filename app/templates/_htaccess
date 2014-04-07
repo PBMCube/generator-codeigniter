@@ -21,7 +21,7 @@ AddType text/x-component .htc
 
 # BEGIN GZIP
 <ifmodule mod_deflate.c>
-  AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css text/javascript application/x-javascript application/javascript
+  AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css text/javascript application/x-javascript application/javascript application/json
   BrowserMatch ^Mozilla/4 gzip-only-text/html
   BrowserMatch ^Mozilla/4\.[0678] no-gzip
   BrowserMatch \bMSIE\s7 !no-gzip !gzip-only-text/html
