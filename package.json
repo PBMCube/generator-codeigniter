@@ -1,37 +1,35 @@
 {
-  "name": "generator-codeigniter",
-  "version": "0.0.20",
-  "description": "A generator for Yeoman, this generator creates a CodeIgniter backend and Angular Frontend.",
-  "keywords": [
-    "yeoman-generator codeigniter php"
-  ],
-  "homepage": "https://github.com/homerjam/generator-codeigniter",
-  "bugs": "https://github.com/homerjam/generator-codeigniter/issues",
-  "author": {
-    "name": "James Homer",
-    "email": "",
-    "url": "https://github.com/homerjam"
-  },
-  "main": "app/index.js",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/homerjam/generator-codeigniter.git"
-  },
-  "scripts": {
-    "test": "mocha"
-  },
-  "dependencies": {
-    "yeoman-generator": "~0.13.3"
-  },
-  "devDependencies": {
-    "mocha": "~1.10.0"
-  },
-  "engines": {
-    "node": ">=0.8.0"
-  },
-  "licenses": [
-    {
-      "type": "MIT"
-    }
-  ]
+    "name": "generator-codeigniter",
+    "version": "0.0.20",
+    "description": "A generator for Yeoman, this generator creates a CodeIgniter backend and Angular Frontend.",
+    "keywords": [
+        "yeoman-generator codeigniter php"
+    ],
+    "homepage": "https://github.com/homerjam/generator-codeigniter",
+    "bugs": "https://github.com/homerjam/generator-codeigniter/issues",
+    "author": {
+        "name": "James Homer",
+        "email": "",
+        "url": "https://github.com/homerjam"
+    },
+    "main": "app/index.js",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/homerjam/generator-codeigniter.git"
+    },
+    "scripts": {
+        "test": "mocha"
+    },
+    "dependencies": {
+        "yeoman-generator": "~0.13.3"
+    },
+    "devDependencies": {
+        "mocha": "~1.10.0"
+    },
+    "engines": {
+        "node": ">=0.8.0"
+    },
+    "licenses": [{
+        "type": "MIT"
+    }]
 }
