@@ -21,6 +21,7 @@
         "grunt-ngmin": "*",
         "grunt-sass": "*",
         "grunt-asciify": "*",
-        "grunt-bumpup": "*"
+        "grunt-bumpup": "*",
+        "node-bourbon": "*"
     }
 }

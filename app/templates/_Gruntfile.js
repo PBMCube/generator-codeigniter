@@ -155,7 +155,8 @@ module.exports = function(grunt) {
             dist: {
                 options: {
                     sourceComments: 'map',
-                    outputStyle: 'compressed'
+                    outputStyle: 'compressed',
+                    includePaths: require('node-bourbon').includePaths
                 },
                 files: [{
                     expand: true,

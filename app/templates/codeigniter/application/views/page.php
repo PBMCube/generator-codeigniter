@@ -47,7 +47,7 @@
         <script type="text/javascript">try { console.assert(1); } catch(e) { console = { log: function() {}, assert: function() {} } }</script>
     <? } ?>
 
-    <link rel="stylesheet" href="/styles/css/all.css?v=<?=APP_VERSION?>">
+    <link rel="stylesheet" href="/styles/css/main.css?v=<?=APP_VERSION?>">
 
     <!--[if IE ]>
     <![endif]-->
