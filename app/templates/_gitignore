@@ -1,5 +1,7 @@
 node_modules
 bower_components
 .sass-cache
-application/cache
 application/logs
+application/cache/*
+!application/cache/.htaccess
+!application/cache/index.html

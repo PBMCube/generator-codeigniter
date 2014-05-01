@@ -11,7 +11,7 @@ $name = explode('/', $info->name);
 define('APP_NAME', $name[1]);
 define('APP_VERSION', $info->version);
 
-if (getenv('BUILDPACK_URL')) { define('ENVIRONMENT', 'production'); }
+if (getenv('ENVIRONMENT')) { define('ENVIRONMENT', getenv('ENVIRONMENT')); }
 
 /*
  *---------------------------------------------------------------

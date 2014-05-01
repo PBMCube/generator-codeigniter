@@ -65,6 +65,7 @@ CodeigniterGenerator.prototype.app = function app() {
     this.copy('_htaccess', '.htaccess');
     this.copy('_bowerrc', '.bowerrc');
     this.copy('_gitignore', '.gitignore');
+    this.copy('_slugignore', '.slugignore');
     this.copy('_README.md', 'README.md');
     this.copy('_robots.txt', 'robots.txt');
     this.copy('_Gruntfile.js', 'Gruntfile.js');

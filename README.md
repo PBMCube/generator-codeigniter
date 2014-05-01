@@ -4,8 +4,7 @@
 A generator for Yeoman, this generator creates a CodeIgniter structure.
 
 ## Getting started
-- Make sure you have [yo](https://github.com/yeoman/yo) installed:
-    `npm install -g yo`
+- Make sure you have [yo](https://github.com/yeoman/yo) installed: `npm install -g yo`
 - Install the generator: `npm install -g generator-codeigniter`
 - Run: `yo codeigniter`
 
